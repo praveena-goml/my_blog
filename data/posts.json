@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "first-post",
+    "title": "My First Blog Post",
+    "content": "This is my first blog post using Next.js."
+  },
+  {
+    "slug": "second-post",
+    "title": "Learning Next.js",
+    "content": "Next.js makes it easy to build modern web applications."
+  },
+  {
+    "slug": "third-post",
+    "title": "My Journey",
+    "content": "I am learning full stack development step by step."
+  }
+]
