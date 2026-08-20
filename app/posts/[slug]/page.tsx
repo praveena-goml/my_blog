@@ -1,3 +1,4 @@
+import Link from "next/link";
 import posts from "@/data/posts.json";
 
 export default async function PostPage({
@@ -10,13 +11,39 @@ export default async function PostPage({
   const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
-    return <h1>Post not found</h1>;
+    return (
+      <main className="not-found">
+        <div className="container">
+          <h1>Post Not Found</h1>
+          <Link href="/" className="back-link">
+            ← Back to Home
+          </Link>
+        </div>
+      </main>
+    );
   }
 
   return (
-    <main>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+    <main className="article-page">
+      <div className="container article-container">
+        <Link href="/" className="back-link">
+          ← Back to Home
+        </Link>
+
+        <p className="article-label">ARTICLE</p>
+
+        <h1>{post.title}</h1>
+
+        <div className="article-divider"></div>
+
+        <p className="article-content">{post.content}</p>
+
+        <div className="article-footer">
+          <Link href="/" className="back-button">
+            ← More Articles
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
